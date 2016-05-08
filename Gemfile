@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'validates_timeliness', '~> 4.0'
 
 group :test do
   gem 'shoulda', '~> 3.5'
