@@ -255,3 +255,28 @@ html, body {
     width: 10%;
   }
 }
+
+.full-width{
+  width: 100%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.column-form{
+ .mdl-textfield{
+   width: 50%;
+ }
+}
+
+.mdl-texarea{
+  width: 80%;
+  textarea{
+    height: 100px;
+  }
+}
+
+.push-right{
+  float: right;
+}
