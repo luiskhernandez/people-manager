@@ -11,8 +11,7 @@ class PeopleControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:people)
-    assert_select 'h1', 'People'
-    assert_select 'a', 'New Person'
+    assert_select 'a', 'People'
   end
 
   test 'GET new' do
@@ -20,7 +19,7 @@ class PeopleControllerTest < ActionController::TestCase
     assert_response :success
     assert_template :new
     assert_template layout: 'layouts/application', partial: '_form'
-    assert_select 'a', 'People list'
+    assert_select 'a', 'People'
   end
 
   test 'assigns a new person as @person' do

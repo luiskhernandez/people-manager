@@ -9,4 +9,14 @@ class Person < ActiveRecord::Base
   validates :last_name, presence: true, length: { maximum: 75 }
   validates :birthdate, presence: true
   validates_date :birthdate, on_or_before: lambda { Date.current }
+
+  scope :order_by_full_name, -> { order('first_name', 'last_name') }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def age
+    (Date.today - birthdate).to_i / 365
+  end
 end

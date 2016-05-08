@@ -63,6 +63,6 @@ class PeopleController < ApplicationController
     end
 
     def people_scope
-      Person.all
+      Person.order_by_full_name.all
     end
 end

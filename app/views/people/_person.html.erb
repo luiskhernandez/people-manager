@@ -1,0 +1,6 @@
+<tr>
+  <td class="mdl-data-table__cell--non-numeric"><%= person.full_name %></td>
+  <td><%= person.email %></td>
+  <td><%= person.age %></td>
+  <td><%= link_to "Delete", person, method: :delete, data: { confirm: "Are you sure ? .This action will remove #{person.first_name} from the sytem. "} %></td>
+</tr>

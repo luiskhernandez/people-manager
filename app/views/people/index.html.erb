@@ -1,2 +1,20 @@
-<h1> People</h1>
-<%= link_to 'New Person', new_person_path %> 
+<%= link_to new_person_path, class: "fixed-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" do  %>
+  <i class="material-icons" role="presentation">add</i>
+  <span class="visuallyhidden">Add</span>
+<% end %>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <table class="mdl-data-table full-table">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Full Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @people %>
+    </tbody>
+  </table>
+</section>
