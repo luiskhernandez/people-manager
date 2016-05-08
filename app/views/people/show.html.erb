@@ -1,0 +1,24 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp profile">
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color-text--white">
+      <%= image_tag @person.picture.url || 'avatar.png' %>
+    </header>
+    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card__supporting-text">
+        <h4><%= @person.full_name %></h4>
+        <ul class="mdl-list ul-vertical">
+          <li class="mdl-list__item">Age: <%= @person.age %></li>
+          <li class="mdl-list__item">Gender: <%= @person.gender %></li>
+          <li class="mdl-list__item">Job: <%= @person.job %></li>
+        </ul>
+        <p> <%= @person.bio %></p>
+      </div>
+      <div class="mdl-card__actions">
+        <%= link_to "Edit info", edit_person_path(@person), class: 'mdl-button  mdl-button--accent' %>
+        <%= link_to "Delete", @person, method: :delete,
+          data: { confirm: "Are you sure ? .This action will remove #{@person.full_name} from the sytem. "},
+          class: 'mdl-button' %>
+      </div>
+    </div>
+  </section>
+</section>

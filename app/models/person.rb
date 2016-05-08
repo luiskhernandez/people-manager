@@ -1,4 +1,5 @@
 class Person < ActiveRecord::Base
+  mount_uploader :picture, AvatarUploader
   GENDERS = [ 'female', "male"]
 
   validates :bio, length: { maximum: 500 }

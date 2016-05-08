@@ -280,3 +280,25 @@ html, body {
 .push-right{
   float: right;
 }
+.profile{
+  header{
+    position: relative;
+  }
+  img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.ul-vertical{
+  li{
+    display: inline-block;
+  }
+}
+.image_to_upload{
+  width: 128px;
+  height: 128px;
+  margin-right: 20px;
+}
