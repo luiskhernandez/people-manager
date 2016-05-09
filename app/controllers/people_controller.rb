@@ -28,7 +28,9 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    load_person && @person.destroy
+    load_person
+    @person.destroy
+    NotifyJob.perform_later(action: 'destroy', person: @person.full_name)
     flash[:notice] = "Person deleted successfuly"
     redirect_to people_path
   end
@@ -50,6 +52,7 @@ class PeopleController < ApplicationController
     def save_person
       if @person.save
         flash[:notice] = "Person saved successfuly"
+        NotifyJob.perform_later(action: 'create', person: @person) if action_name == 'create'
         redirect_to @person
       else
         flash[:error] = @person.errors.full_messages.to_sentence

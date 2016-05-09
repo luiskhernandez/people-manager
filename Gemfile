@@ -6,13 +6,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '4.1.1'
-gem 'turbolinks','2.5.3'
-gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'validates_timeliness', '~> 4.0'
 gem 'material_design_lite-rails', '1.1.3'
 gem 'material_icons', '2.2.0'
-gem 'carrierwave'
+gem 'carrierwave', '0.11.2'
+
+gem 'redis', '~>2'
+gem 'resque'
+gem 'resque-scheduler'
 
 group :test do
   gem 'shoulda', '~> 3.5'
@@ -27,5 +29,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'foreman'
 end
 
