@@ -3,13 +3,29 @@
   <span class="visuallyhidden">Add</span>
 <% end %>
 
+<%= search_form_for @q do |f|  %>
+  <i class="material-icons">search</i>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :first_name_or_last_name_or_email_cont, class: 'mdl-textfield__label' %>
+    <%= f.text_field :first_name_or_last_name_or_email_cont, class: 'mdl-textfield__input' %>
+  </div>
+      <%  if params[:q]%>
+        <%= link_to 'Clear', people_path %>
+      <% end %>
+<% end %>
+
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
   <table class="mdl-data-table full-table">
     <thead>
       <tr>
-        <th class="mdl-data-table__cell--non-numeric">Full Name</th>
-        <th>Email</th>
-        <th>Age</th>
+        <th>
+          <%= will_paginate @people %>
+        </th>
+      </tr>
+      <tr>
+        <th> <%= sort_link(@q, :first_name, 'Full Name', default_order: {last_name: 'asc', first_name: 'asc'}) %> </th>
+        <th> <%= sort_link(@q, :email) %> </th>
+        <th> <%= sort_link(@q, :birthdate, 'Age', hide_indicator: true) %></th>
         <th>Delete</th>
       </tr>
     </thead>

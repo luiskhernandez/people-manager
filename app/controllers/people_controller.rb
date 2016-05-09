@@ -37,7 +37,8 @@ class PeopleController < ApplicationController
 
   private
     def load_people
-      @people ||= people_scope.to_a
+      @q = people_scope.ransack(params[:q])
+      @people ||= @q.result(distinct: true).paginate(page: params[:page])
     end
 
     def load_person

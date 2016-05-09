@@ -16,6 +16,9 @@ gem 'redis', '~>2'
 gem 'resque'
 gem 'resque-scheduler'
 
+gem 'will_paginate'
+gem 'ransack'
+
 group :test do
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers', '~> 2.0'
