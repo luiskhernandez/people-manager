@@ -1,28 +1,36 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+People manager is and app tha let you register user into the system, and notify everyone
+when a new person is added or deleted from the system
 
-Things you may want to cover:
+This project follows the controller pattern of Growing Rails Application in pracitce Book
 
-* Ruby version
+ Ruby version
+  2.2
 
 * System dependencies
+  - redis
+  - mysql
 
 * Configuration
 
+ Change credintiales in config/database.yml
+
 * Database creation
+   rake db:create
 
 * Database initialization
+   rake db:migrate
+   rake db:seed
 
 * How to run the test suite
+   bin/rake test
 
 * Services (job queues, cache servers, search engines, etc.)
+   resque
 
-* Deployment instructions
+* Start the app with Foreman
 
-* ...
+gem install foreman
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+foreman start
