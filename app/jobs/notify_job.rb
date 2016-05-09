@@ -4,13 +4,9 @@ class NotifyJob < ActiveJob::Base
   def perform(action: , person:)
     case action
     when 'create'
-      Person.where.not(id: person.id).find_each do |p|
-        PersonMailer.new_person(p, person).deliver_later
-      end
+      Notify.new_person(person)
     when 'destroy'
-      Person.find_each do |p|
-        PersonMailer.delete_person(p, person).deliver_later
-      end
+      Notify.delete_person(person)
     end
   end
 end
